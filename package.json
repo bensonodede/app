@@ -4,10 +4,10 @@
   "description": "a little test app",
   "main": "app.js",
   "scripts": {
-    "build": "browserify app.js -o bundle.js"
+    "start": "app.js"
   },
   "keywords": [
-    "fun"
+    "delivery"
   ],
   "author": "mimi",
   "license": "ISC",
