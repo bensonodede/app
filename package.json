@@ -4,7 +4,7 @@
   "description": "a little test app",
   "main": "app.js",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "delivery"
