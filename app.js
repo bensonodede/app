@@ -7,7 +7,7 @@ var $ = require('jquery');
 var twilio = require('twilio');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-
+var Regex = require("regex");
 
 //What3Words package import and options
 var What3Words = require('./node_modules/geo.what3words/lib/geo.what3words.js'),
@@ -81,13 +81,11 @@ io.on('connection', function(socket) {
     app.post('/', function(req, res) {
     var twilio = require('twilio');
     var twiml = new twilio.TwimlResponse();
-    var regExNumber = new RegExp("\([0-9])");
+    var regExNumber = new Regex("\([0-9]{9})");
+
 
     if (req.body.Body == regExNumber) {
-      client.messages.create({
-        to: req.body.Body,
-        from: "+16466797502",
-        body: "Your package has been picked up and is on the way.",
+      console.log("Regex True");
       }, function(err, message) {
         console.log(err);
       })
