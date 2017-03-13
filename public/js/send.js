@@ -38,17 +38,17 @@ btnShip.addEventListener('click', e => {
 
   var name = recName.value;
   var address = recAddress.value;
-  var number = recNumber.value;
+  var number = "+254" + recNumber.value;
 
   var regExName = new RegExp("([a-zA-Z\\-]+){2,}\\s+([a-zA-Z\\-]+){2,}");
   var regExAddress  = new RegExp("([a-zA-Z\\-]+)[.]+([a-zA-Z\\-]+)[.]([a-zA-Z\\-]+)");
-  var regExNumber = new RegExp("\([0-9]{10})");
+  var regExNumber = new RegExp("\([0-9]{9})");
 
 
   if (regExName.test(name) && regExAddress.test(address) && regExNumber.test(number)) {
 
 
-      
+
         $('#loader').toggleClass('visible');
         $('.dark-overlay').show();
         setTimeout(function(){
