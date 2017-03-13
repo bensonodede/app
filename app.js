@@ -84,7 +84,7 @@ io.on('connection', function(socket) {
     var regExNumber = new Regex("\([0-9]{9})");
 
 
-    if (req.body.Body == regExNumber) {
+    if (regExNumber.test(req.body.Body)) {
       console.log("Regex True");
       }, function(err, message) {
         console.log(err);
