@@ -81,9 +81,11 @@ io.on('connection', function(socket) {
     app.post('/', function(req, res) {
     var twilio = require('twilio');
     var twiml = new twilio.TwimlResponse();
-    if (req.body.Body == 'hello') {
+    var regExNumber = new RegExp("\([0-9])");
+
+    if (req.body.Body == regExNumber) {
       client.messages.create({
-        to: data.number,
+        to: req.body.Body,
         from: "+16466797502",
         body: "Your package has been picked up and is on the way.",
       }, function(err, message) {
