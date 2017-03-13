@@ -18,6 +18,7 @@
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="css/fileupload.css">
 
 
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
@@ -64,12 +65,29 @@
        <div class="mdl-layout__tab-panel is-active" id="overview">
 
          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-           <header class="section__play-btn mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-                         <!-- Colored FAB button with ripple -->
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">file_upload</i>
-            </button>
+           <header class="section__play-btn mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone  mdl-color-text--white">
 
+            <form id="file-upload-form" class="uploader">
+              <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+              <label for="file-upload" id="file-drag">
+                <img id="file-image" src="#" alt="Preview" class="hidden">
+                <div id="start">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  <div>Select a file or drag here</div>
+                  <div id="notimage" class="hidden">Please select an image</div>
+                  <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                  <!-- Colored FAB button with ripple -->
+
+                </div>
+                <div id="response" class="hidden">
+                  <div id="messages"></div>
+                  <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                  </progress>
+                </div>
+              </label>
+            </form>
 
            </header>
 
@@ -81,8 +99,8 @@
 
                 <!-- Child -->
 
-               <h4>Upload image</h4>
-               <h6>This lets us estimate the item's size and weight.</h6>
+               <h1>Upload image</strong></h1>
+               <p>This lets us estimate the item's size and weight.</p>
              </div>
              <br>
              <br>
@@ -98,13 +116,28 @@
                <div class="mdl-card__supporting-text">
 
         				<form action="#">
+
         					<div class="mdl-textfield mdl-js-textfield  mdl-cell--12-col">
-        						<input class="mdl-textfield__input" type="text" id="recName" />
+        						<input
+                    class="mdl-textfield__input"
+                    type="text"
+                    id="recName"
+                    pattern="([a-zA-Z\-]+){2,}\s+([a-zA-Z\-]+){2,}"
+                    spellcheck="false"
+                    required/>
         						<label class="mdl-textfield__label" for="username">Recipient's Full name</label>
         					</div>
+
                   <br>
+
         					<div class="mdl-textfield mdl-js-textfield  mdl-cell--12-col">
-        						<input class="mdl-textfield__input" type="text" id="recAddress" />
+        						<input
+                    class="mdl-textfield__input"
+                    type="text"
+                    id="recAddress"
+                    spellcheck="false"
+                    pattern="([a-zA-Z\-]+)[.]+([a-zA-Z\-]+)[.]([a-zA-Z\-]+)"
+                    required/>
         						<label class="mdl-textfield__label" for="recAddress">Recipient's address</label>
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="location-help">
                       <i class="material-icons">help</i>
@@ -113,9 +146,15 @@
                       <h6>Their <strong>address</strong> will be displayed when they visit our <strong>homepage</strong>.</h6>
                     </div>
         					</div>
+
                   <br>
+
                   <div class="mdl-textfield mdl-js-textfield  mdl-cell--12-col">
-        						<input class="mdl-textfield__input" type="number" id="recNumber" />
+        						<input
+                    class="mdl-textfield__input"
+                    id="recNumber"
+                    pattern="([0-9]{10})"
+                    required />
         						<label class="mdl-textfield__label" for="recNumber">Recipient's phone number</label>
         					</div>
         				</form>
@@ -146,6 +185,9 @@
 </div>
 
   </body>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="js/fileupload.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/send.js"></script>
 </html>

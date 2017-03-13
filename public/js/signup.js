@@ -7,12 +7,11 @@ GentleForm(form, function (event) {
   event.preventDefault();
 
 
-//TODO:30 add function to the line below.
   if (this.isValid()) {
     addToast('success', 'Yay, the form is valid!');
-  /*  setTimeout(function redirect() {
+   setTimeout(function redirect() {
       window.location.href = "send.html";
-    }, 3000)*/
+    }, 3000)
   }
   else addToast('error', 'Oops, the form is invalid.');
 });

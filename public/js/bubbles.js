@@ -37,7 +37,7 @@ var canvasRegion = new ZingTouch.Region(document.getElementById('container'));
 //SWIPING
 canvasRegion.bind(canvas, 'swipe', function(e) {
   var weight = 1.5;
-  
+
   setOutput([
     ['Gesture', 'Swipe'],
     ['velocity', Math.floor(e.detail.data[0].velocity) + "px/ms"],
@@ -83,7 +83,7 @@ canvasRegion.bind(canvas, customPan, function(e) {
     ['directionFromOrigin', Math.floor(e.detail.data[0].directionFromOrigin) + "°"],
     ['distanceFromOrigin', Math.floor(e.detail.data[0].distanceFromOrigin) + "px"]
   ]);
-  
+
   var originalEvent = e.detail.events[0].originalEvent;
   var canvas = document.getElementById('main-canvas');
   var canvasRect = canvas.getBoundingClientRect();
@@ -96,7 +96,7 @@ canvasRegion.bind(canvas, customPan, function(e) {
   bubbles[currentIndex].y = (y < 0) ? 0 : (y > rect.height) ? rect.height : y;
 
   //Change velocity.
-  bubbles[currentIndex].vy = -1 * Math.sin((Math.PI / 180) * e.detail.data[0].currentDirection);
+  bubbles[currentIndex].vy = -6 * Math.sin((Math.PI / 180) * e.detail.data[0].currentDirection);
   bubbles[currentIndex].vx = Math.cos((Math.PI / 180) * e.detail.data[0].currentDirection);
 });
 
