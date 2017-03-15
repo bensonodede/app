@@ -110,8 +110,8 @@ io.on('connection', function(socket) {
 
 app.post('/', function(req, res) {
   var twiml = new twilio.TwimlResponse();
-  if (req.body.Body == Number ) {
-    var rec = String(Number);
+  var rec = String(Number);
+  if (req.body.Body == rec ) {
     client.messages.create({
       to: rec,
       from: "+16466797502",
