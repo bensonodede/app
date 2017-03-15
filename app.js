@@ -39,6 +39,14 @@ app.get('/ontheway', function(req, res){
   res.sendFile(__dirname + '/public/ontheway.html');
 });
 
+app.get('/sitemap', function(req, res){
+  res.sendFile(__dirname + '/public/sitemap.html');
+});
+
+app.get('/robots.txt', function(req, res){
+  res.sendFile(__dirname + '/public/robots.txt');
+});
+
 app.get('/google5789020687f2746e', function(req, res){
   res.sendFile(__dirname + 'public/google5789020687f2746e.html');
 });
