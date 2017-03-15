@@ -108,6 +108,8 @@ io.on('connection', function(socket) {
   console.log(err);
 });
 
+
+/*
 app.post('/', function(req, res) {
   var twiml = new twilio.TwimlResponse();
   var rec = String(Number);
@@ -127,7 +129,7 @@ app.post('/', function(req, res) {
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
 });
-
+*/
   });
 
 });

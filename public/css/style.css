@@ -1235,8 +1235,19 @@ Responsive Styles
   #footer .footer-links {
     width: 100%;
   }
+  #map{
+    height: 10px;
+  }
+
 }
 /*# sourceMappingURL=style.css.map */
 #start {
   color: white;
+}
+#w3w {
+  font-size: 27px;
+  border-bottom: 4px solid #267df4;
+  border-left: 4px solid #267df4;
+  border-right: 4px solid #267df4;
+  border-top: 4px solid #267df4;
 }
