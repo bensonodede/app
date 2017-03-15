@@ -38,6 +38,10 @@ app.get('/login', function(req, res){
 app.get('/ontheway', function(req, res){
   res.sendFile(__dirname + '/public/ontheway.html');
 });
+
+app.get('/google5789020687f2746e', function(req, res){
+  res.sendFile(__dirname + 'public/google5789020687f2746e.html');
+});
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBaPMtJs4kLq81Csc7ykcI-ZNtvEwBUaUA",
