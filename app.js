@@ -50,6 +50,11 @@ app.get('/robots.txt', function(req, res){
 app.get('/google5789020687f2746e', function(req, res){
   res.sendFile(__dirname + 'public/google5789020687f2746e.html');
 });
+
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function(req, res){
+  res.send('what???', 404);
+});
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBaPMtJs4kLq81Csc7ykcI-ZNtvEwBUaUA",
@@ -99,7 +104,7 @@ io.on('connection', function(socket) {
    client.messages.create({
           to: "+254724645546",
           from: "+16466797502",
-          body: "PICKUP requested at " + "\n" + response + "\n" + "by " + data.name + "\n" + "Contact: " + data.number,
+          body: "PICKUP requested at " + "\n" + response + "\n" + "Name: " + data.name + "\n" + "Contact: " + data.number,
       }, function(err, message) {
          console.log(err);
       });
@@ -115,7 +120,7 @@ io.on('connection', function(socket) {
     client.messages.create({
     to: "+254724645546",
     from: "+16466797502",
-    body: "DROPOFF at " + "\n" + data.address + "\n" + "by " + data.name + "\n" + "Contact: " + data.number,
+    body: "DROPOFF at " + "\n" + data.address + "\n" + "Name: " + data.name + "\n" + "Contact: " + data.number,
   }, function(err, message) {
   console.log(err);
 });

@@ -118,9 +118,17 @@ ul > li {
   color: white;
 }
 
+.btn-blue:active {
+  background-color: #5295f2
+}
+
 .btn-green {
   background-color: #6fc754;
   color: white;
+}
+
+.btn-green:active {
+  background-color: #a6e592;
 }
 
 .btn-dark {
