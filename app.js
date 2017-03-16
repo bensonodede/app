@@ -40,7 +40,7 @@ app.get('/ontheway', function(req, res){
 });
 
 app.get('/sitemap', function(req, res){
-  res.sendFile(__dirname + '/public/sitemap.html');
+  res.sendFile(__dirname + '/public/sitemap.xml');
 });
 
 app.get('/robots.txt', function(req, res){
