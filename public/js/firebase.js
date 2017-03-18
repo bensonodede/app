@@ -19,8 +19,6 @@ function lat(callback) {
 //Pass coordinates through w3w api(coords can only be a string separated by a comma)
 function locateme() {
     lat(function(latitude, longitude) {
-        console.log(latitude);
-        console.log(longitude);
         var lat = latitude.toString();
         var lon = longitude.toString();
         var loc = (lat + ', ' + lon);

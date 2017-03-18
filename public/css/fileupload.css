@@ -16,7 +16,7 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
   line-height: 1;
-  color: #454cad;
+  color: #267df4;
   margin-bottom: 0;
 }
 
@@ -50,10 +50,10 @@ p {
           user-select: none;
 }
 .uploader label:hover {
-  border-color: #454cad;
+  border-color: #267df4;
 }
 .uploader label.hover {
-  border: 3px solid #454cad;
+  border: 3px solid #267df4;
   box-shadow: inset 0 0 0 6px #eee;
 }
 .uploader label.hover #start i.fa {
@@ -157,7 +157,7 @@ p {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
-  background: #454cad;
-  border-color: #454cad;
+  background: #267df4;
+  border-color: #267df4;
   cursor: pointer;
 }

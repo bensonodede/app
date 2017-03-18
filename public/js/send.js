@@ -17,7 +17,7 @@ var recName = document.getElementById('recName');
 var recAddress = document.getElementById('recAddress');
 var recNumber = document.getElementById('recNumber');
 var btnShip = document.getElementById('ship');
-
+var logoutLink2 = document.getElementById('logoutLink2');
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -28,13 +28,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-
+logoutLink2.addEventListener('click', e => {
+  var auth = firebase.auth();
+  firebase.auth().signOut();
+});
 
 btnShip.addEventListener('click', e => {
-
-
-
-
 
   var name = recName.value;
   var address = recAddress.value;
@@ -44,10 +43,7 @@ btnShip.addEventListener('click', e => {
   var regExAddress  = new RegExp("([a-zA-Z\\-]+)[.]+([a-zA-Z\\-]+)[.]([a-zA-Z\\-]+)");
   var regExNumber = new RegExp("\([0-9]{10})");
 
-
   if (regExName.test(name) && regExAddress.test(address) && regExNumber.test(number)) {
-
-
 
         $('#loader').toggleClass('visible');
         $('.dark-overlay').show();
@@ -59,15 +55,11 @@ btnShip.addEventListener('click', e => {
           window.location.assign("ontheway.html");
         }, 9500);
 
-
-
     socket.emit('recipient', {
       name: name,
       address: address,
       number: number
     });
-
-
 
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -109,8 +101,6 @@ btnShip.addEventListener('click', e => {
 
                 function locateme() {
                     lat(function(latitude, longitude) {
-                        console.log(latitude);
-                        console.log(longitude);
                         var lat = latitude.toString();
                         var lon = longitude.toString();
                         var address = (lat + ', ' + lon);
@@ -125,8 +115,6 @@ btnShip.addEventListener('click', e => {
                 }
                   locateme();
 
-
-
             }
             get();
           }
@@ -138,7 +126,6 @@ btnShip.addEventListener('click', e => {
            window.location.href = "login.html";
         }
       });
-
 
   } else {
     alert("Invalid details");

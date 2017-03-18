@@ -53,7 +53,7 @@ app.get('/google5789020687f2746e', function(req, res){
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
-  res.send('what???', 404);
+  res.status(404).send('what??');
 });
 // Initialize Firebase
 var config = {
@@ -119,6 +119,7 @@ io.on('connection', function(socket) {
     console.log(data.number);
     client.messages.create({
     to: "+254724645546",
+    //to: "+254716305157",
     from: "+16466797502",
     body: "DROPOFF at " + "\n" + data.address + "\n" + "Name: " + data.name + "\n" + "Contact: " + data.number,
   }, function(err, message) {

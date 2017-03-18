@@ -115,4 +115,3 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('not logged in');
   }
 });
-firebase.auth().signOut();
