@@ -3,7 +3,7 @@ var socket = io();
 
 //Geolocation function
 function lat(callback) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.watchPosition(function(position) {
       {
         enableHighAccuracy: true;
       }
