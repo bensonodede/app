@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //What3Words package import and options
 var What3Words = require('./node_modules/geo.what3words/lib/geo.what3words.js'),
     w3w = new What3Words('F06KL8FA', {
-        language: 'sw'
+        language: 'en'
     });
 
 //Css files go here
