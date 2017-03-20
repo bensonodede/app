@@ -45,7 +45,7 @@ btnShip.addEventListener('click', e => {
 
   if (regExName.test(name) && regExAddress.test(address) && regExNumber.test(number)) {
 
-    
+
 
     socket.emit('recipient', {
       name: name,
