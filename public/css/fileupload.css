@@ -37,7 +37,8 @@ p {
   float: left;
   clear: both;
   width: 100%;
-  padding: 4.2rem 1.5rem;
+  height: 100%;
+  padding: 7rem 1.5rem;
   text-align: center;
   background: #fff;
   border-radius: 0px;
