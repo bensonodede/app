@@ -108,6 +108,9 @@ io.on('connection', function(socket) {
       }, function(err, message) {
          console.log(err);
       });
+      socket.emit('complete', {
+        status: "Done."
+      });
     });
   });
 

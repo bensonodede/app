@@ -45,15 +45,7 @@ btnShip.addEventListener('click', e => {
 
   if (regExName.test(name) && regExAddress.test(address) && regExNumber.test(number)) {
 
-        $('#loader').toggleClass('visible');
-        $('.dark-overlay').show();
-        setTimeout(function(){
-          $('#loader').toggleClass('visible');
-          $('.dark-overlay').hide();
-        }, 10000);
-        setTimeout(function(){
-          window.location.assign("ontheway.html");
-        }, 9500);
+    
 
     socket.emit('recipient', {
       name: name,
@@ -67,6 +59,8 @@ btnShip.addEventListener('click', e => {
 
 
           function loadsender() {
+            $('#loader').toggleClass('visible');
+            $('.dark-overlay').show();
 
             function get() {
               var ref = database.ref("users/" + user.uid);
@@ -132,3 +126,8 @@ btnShip.addEventListener('click', e => {
   }
 
 });
+
+socket.on('complete' , function(data) {
+    console.log(data.status);
+    window.location.assign("ontheway.html");
+})
