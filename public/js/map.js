@@ -16,7 +16,7 @@
           singleLineFieldName: "what3words",
           outFields: ["what3words"],
           name: "W3W",
-          placeholder: "e.g. nyumbani.ufike.kutoka",
+          placeholder: "e.g. table.spoon.chair",
           highlightSymbol: new PictureMarkerSymbol("images/w3w-pointer.png", 36, 36).setOffset(9, 18),
           infoTemplate: new InfoTemplate("W3W address", "${what3words}")
         }
